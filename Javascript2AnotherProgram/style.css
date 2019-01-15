@@ -1,0 +1,19 @@
+#container {
+  width: 450px;
+  height: 450px;
+  position: relative;
+  background: blue;
+}
+#animate {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  background-color: green;
+}
+
+#animate2 {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  background-color: red;
+}

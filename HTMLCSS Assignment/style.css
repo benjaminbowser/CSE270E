@@ -1,0 +1,23 @@
+body {
+  background-image: url("img/paper.jpg");
+}
+
+.columns {
+  float: left;
+  width: 50%;
+}
+
+/* Clear floats after the columns. Help from w3schools on clearing */
+.columnArea:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+img.LeftColumn {
+  float: right;
+}
+
+img.RightColumn {
+  float: Right;
+}

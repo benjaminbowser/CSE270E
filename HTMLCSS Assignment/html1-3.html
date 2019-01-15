@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<title>Benjamin Bowser</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<p>
+<h1>
+<img src='img/miamilogo.jpg' alt='The Miami University M Logo' width='50' height='40'>
+Benjamin Bowser</h1>
+</p>
+
+<div class="columnArea">
+<script>
+// https://stackoverflow.com/questions/1484506/random-color-generator
+function getRandomColor() {
+  var letters = '0123456789ABCDEF';
+  var color = '#';
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+</script>
+
+
+  <div class="columns">
+	<canvas id="myCanvas" width="270" height="100" style="border:1px solid;">
+	Your browser does not support the HTML5 canvas tag.</canvas>
+<script>
+	var c = document.getElementById("myCanvas");
+	var ctx = c.getContext("2d");
+	
+	ctx.beginPath();
+	ctx.rect(20, 20, 50, 50);
+	ctx.fillStyle = getRandomColor();
+	ctx.fill();
+	
+	ctx.beginPath();
+	ctx.rect(80, 20, 50, 50);
+	ctx.fillStyle = getRandomColor();
+	ctx.fill();
+	
+	ctx.beginPath();
+	ctx.rect(140, 20, 50, 50);
+	ctx.fillStyle = getRandomColor();
+	ctx.fill();
+	
+	ctx.beginPath();
+	ctx.rect(200, 20, 50, 50);
+	ctx.fillStyle = getRandomColor();
+	ctx.fill();
+</script>
+  </div>
+  <div class="columns">
+	<canvas id="myCanvas2" width="270" height="100" style="border:1px solid;">
+	Your browser does not support the HTML5 canvas tag.</canvas>
+<script>
+	var c = document.getElementById("myCanvas2");
+	var ctx = c.getContext("2d");
+	
+	ctx.beginPath();
+	ctx.rect(20, 20, 50, 50);
+	ctx.fillStyle = getRandomColor();
+	ctx.fill();
+	
+	ctx.beginPath();
+	ctx.rect(80, 20, 50, 50);
+	ctx.fillStyle = getRandomColor();
+	ctx.fill();
+	
+	ctx.beginPath();
+	ctx.rect(140, 20, 50, 50);
+	ctx.fillStyle = getRandomColor();
+	ctx.fill();
+	
+	ctx.beginPath();
+	ctx.rect(200, 20, 50, 50);
+	ctx.fillStyle = getRandomColor();
+	ctx.fill();
+</script>
+  </div>
+</div>
+
+<div>
+<footer>
+Benjamin Bowser - Copyright 2019 - <a href='http://cse.miamioh.edu'>Miami CSE</a> - 1/2/2019
+</footer>
+</div>
+</body>
+</html>

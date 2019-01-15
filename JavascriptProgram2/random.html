@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+<title>Bowserbl-270-Program2</title>
+</head>
+<body>
+<div id="display">
+<script type='text/javascript'>
+// Benjamin Bowser
+// 1/8/2019
+// Javascipt Program #2
+// Dice Game
+
+diceGame();
+
+function diceGame() {
+	var rolls = prompt("How many times would you like to roll the dice?");
+	var counts = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+	// subtract 2 from roll
+	for (var i = 0; i < rolls; i++) {
+		var roll = Math.floor(Math.random() * (+13 - +2)) + +2; 
+		// Help from https://www.geeksforgeeks.org/javascript-math-random-function/ for random number generation.
+		counts[roll-2]++;
+	}
+	var output = "Number Cnt<br>2 " + counts[0] + "<br>3 " + counts[1] + "<br>4 " + counts[2] + "<br>5 " + counts[3];
+	output += "<br>6 " + counts[4] + "<br>7 " + counts[5] + "<br>8 " + counts[6] + "<br>9 " + counts[7] + "<br>10 " + counts[8];
+	output += "<br>11 " + counts[9] + "<br>12 " + counts[10];
+	document.getElementById("display").innerHTML = output;
+}
+</script>
+</div>
+</body>
+</html>

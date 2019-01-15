@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<title>Benjamin Bowser - HTML II</title>
+<!-- Integrate bootstrap CDN -->
+<link rel="stylesheet" href=
+  "https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+  <script src=
+  "https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+  <script src=
+  "https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.bundle.min.js"></script>
+</head> 
+<body>
+<div class="container">
+  <div class="row">
+	<!-- First column -->
+    <div class="col-3">
+		<div>Benjamin Bowser</div>
+		<div>
+		<img src='miamilogo.jpg' alt='The Miami University M Logo' width='50' height='40'>
+		</div>
+		<div>CSE270E</div>
+    </div>
+	<!-- Second column -->
+    <div class="col-6">
+      <form method='POST' action='http://ceclnx01.cec.miamioh.edu/~campbest/270e/form.php' id='form'>
+		<div class="form-group">
+			<label for="name">Name:</label>
+			<!-- Using name as "name" from instrctions although it causes an error when posting the
+			form -->
+			<input type="text" class="form-control" name="name" id="name">
+			
+			<label for="zipcode">Zipcode:</label>
+			<input type="text" class="form-control" name="zipcode" id="zipcode">
+			
+			<label for="vehicle">Vehicle Driven:</label>
+			<!-- Assume dropbox named "vehicle" from instructions, rubric shows "options" -->
+			<select name="vehicle" class="form-control" id="vehicle"> 
+				<option value="oldcar">Old Car</option>
+				<option value="newcar">New Car</option>
+				<option value="oldtruck">Old Truck</option>
+				<option value="newtruck">New Truck</option>
+				<option value="sportscar">Sports Car</option>
+				<option value="other">Other</option>
+			</select>
+			<!-- Using unique ID as value for hidden uid area -->
+			<input type='hidden' name='uid' value='bowserbl'>
+			<input type="submit" name="submit"  class="form-control" value="enter">
+		</div>
+    </div>
+	<!-- Third column -->
+    <div class="col-3">
+      <div><a href="http://miamioh.edu/cec/academics/departments/cse/index.html">Miami University CSE</a></div>
+	  <div><a href="http://miamioh.edu/">Miami University Homepage</a></div>
+	  <div><a href="https://benjaminbowser.com">My Website</a></div>
+	</div>
+  </div>
+  </div>
+</body>
+</html>

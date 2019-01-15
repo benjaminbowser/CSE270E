@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+<head>
+<title>Bowserbl-270-Program1</title>
+</head>
+<body>
+<div id="display">
+<script type='text/javascript'>
+// Benjamin Bowser
+// 1/7/2019
+// Javascipt Program #1
+// Hi-lo Game
+
+var number = Math.floor(Math.random() * (+1001 - +1)) + +1; 
+// Help from https://www.geeksforgeeks.org/javascript-math-random-function/ for random number generation.
+var guesses = 0;
+startGame();
+
+// Function that generates the first set of HTML to prompt the user for their number guess.
+function startGame() {
+	var guessText = "<label>Enter your guess, between 1 and 1000: </label><form onsubmit=\"guessCheck();\"><input type=\"text\" id=\"userGuess\">";
+	guessText += "<input type=\"submit\" value=\"Enter\" id=\"submit\"></form>";
+	document.getElementById("display").innerHTML = guessText; // Sets display DIV to HTML code
+}
+
+// Function to take in a number of guesses and generate a letter score, then output to the display div.
+function getScore(guesses) {
+	var score = "";
+	// More than 40 guesses
+	if (guesses > 40) {
+		score = "F";
+	}
+	// Less than or equal to40 guesses
+	if (guesses <= 40) {
+		score = "D";
+	}
+	// Less than or equal to 30 guesses
+	if (guesses <= 30) {
+		score = "C";
+	}
+	// Less than or equal to 20 guesses
+	if (guesses <= 20) {
+		score = "B";
+	}
+	// Less than or equal to 10 guesses
+	if (guesses <= 10) {
+		score = "A";
+	}
+	document.getElementById("display").innerHTML = "It took you " + guesses + " attempts. Your score is a " + score + "."; // Display output to div
+}
+
+// Function to take check if number guessed is correct, invalid, or incorrect, and give feedback in the div
+function guessCheck() {
+	var guess = document.getElementById('userGuess').value; // Get the value of the user input
+	var guessText = "<label>Enter your guess, between 1 and 1000: </label><form onsubmit=\"guessCheck();\"><input type=\"text\" id=\"userGuess\">";
+	guessText += "<input type=\"submit\" value=\"Enter\" id=\"submit\"></form>";
+	
+	// Invalid number specified
+	if (guess > 1000 || guess < 1) {
+		guesses++;
+		document.getElementById("display").innerHTML = guessText + "<b>The number you entered is invalid. A valid number is between 1 and 1000.</b>";
+	}
+	// Number must be valid beyond this point
+	else {
+		// Correct guess
+		if (guess == number) {
+			guesses++;
+			alert("Correct guess! The number is " + guess + "! It took you " + guesses + " attempts."); // Alert dialog for correct guess
+			getScore(guesses); // Call getScore to print our score
+		}
+		// Guessed number is larger than the number
+		if (guess > number) {
+			guesses++;
+			document.getElementById("display").innerHTML = guessText + "<b>Guess a smaller number!</b>";
+		}
+		// Guessed number is smaller than the number
+		if (guess < number) {
+			guesses++;
+			document.getElementById("display").innerHTML = guessText + "<b>Guess a larger number!</b>";
+		}
+	}
+}
+</script>
+</div>
+</body>
+</html>

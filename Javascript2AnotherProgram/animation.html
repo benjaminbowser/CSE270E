@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+<title>Bowserbl-270-Animation</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div id="container">
+	<div id="animate"></div>
+	<div id="animate2"</div>
+	<div id="animate3"</div>
+
+<script type='text/javascript'>
+// Benjamin Bowser
+// 1/10/2019
+// Javascipt Program #2 - Another Program
+// Animation
+
+animation(); // Call the animation
+
+function animation() {
+  var div1 = document.getElementById("animate"); // Access the first div
+  var div2 = document.getElementById("animate2"); // Access the second div
+  var pos = 0; // Origin
+  var id = setInterval(frame, 2); // Motion Speed
+  function frame() {
+    if (pos == 350) {  // Reset squares once it hits the end and change colors
+	   color();
+	   pos = 0;
+    } 
+	else { // Move objects
+      pos++; 
+      div1.style.top = pos + "px"; 
+	  div2.style.left = pos + "px";
+    }
+  }
+}
+function color() { // Get random colors and set them to objects
+	var color = "#" + ((1<<24) * Math.random()|0).toString(16);
+	var color2 = "#" + ((1<<24) * Math.random()|0).toString(16);
+	var color3 = "#" + ((1<<24) * Math.random()|0).toString(16);
+	document.getElementById("container").style.background = color3;
+	document.getElementById("animate").style.background = color;
+	document.getElementById("animate2").style.background = color2;
+}
+</script>
+</body>
+</html>

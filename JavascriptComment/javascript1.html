@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+<title>Bowserbl Javascript</title>
+<script type='text/javascript'>
+//Scott Campbell
+//Standard header
+//Javascript example program using events, objects...
+
+var customer={firstName:"Scott",lastName:"Campbell",id:"1",cnt:11,eyeColor:"blue"};
+var customer_list = [];
+customer_list.push(customer);
+
+var customer={firstName:"Sherrie",lastName:"Johnson",id:"2",cnt:22,eyeColor:"green"};
+customer_list.push(customer);
+
+var customer={firstName:"Tawny",lastName:"Peterson",id:"3",cnt:-4,eyeColor:"hazel"};
+customer_list.push(customer);
+
+var customer={firstName:"Allison",lastName:"Smith",id:"4",cnt:13,eyeColor:"brown"};
+customer_list.push(customer);
+
+var customer={firstName:"Michael",lastName:"Stevens",id:"5",cnt:-6,eyeColor:"blue"};
+customer_list.push(customer);
+
+
+function showCustomers() {
+	var message = "";
+	for (index=0,len=customer_list.length; index<len; index++) {
+		if (customer_list[index].cnt <0) {
+			message += "<li onMouseOver='customerLastName(" + index + ")'>Customer First name " + customer_list[index].firstName + " -- NEGATIVE</li>";
+		} else {
+			message += "<li onMouseOver='customerLastName(" + index + ")'>Customer First name " + customer_list[index].firstName + "</li>";
+		}
+	}
+	document.getElementById("msg").innerHTML = message;
+}
+
+function customerLastName(id) {
+	document.getElementById("msg1").innerHTML = "Customer Eye Color is " + customer_list[id].eyeColor;
+}
+</script>
+
+
+</head>
+<body>
+<div onClick='showCustomers();'>Click to Show Customers</div>
+<div id="msg">Answer will go here</div>
+<br><br>
+<div id="msg1"></div>
+</body>
+<html>
