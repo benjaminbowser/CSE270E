@@ -1,0 +1,16 @@
+<% include header %>
+<h2>Clear Games before a time</h2>
+<h3><%= msg[0] %></h3> 
+<form method="post" role="form>
+<div>
+  <label for="time">Enter an epoch time (ms):</label>
+  <input type="text" id="time" name="time"><br>
+</div><div>
+  <label for="password">Enter the password:</label>
+  <input type="password" id="password" name="password"><br>
+</div><div>
+  <input type="submit" value="Clear Entries">
+</div>
+</form>
+
+<% include footer %>

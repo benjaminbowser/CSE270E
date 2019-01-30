@@ -1,0 +1,24 @@
+<!--Benjamin Bowser
+Assignment 12
+CSE270e
+1/19/19 -->
+<% include header %>
+<div>
+<h2>Images for <%=data.rover%>:</h2>
+<table>
+<tr>
+<th>Click a link for the full resolution image</th>
+</tr>
+<% for (let i =0; i < posts.length; i++){ %>
+	<tr><td><a href = "<%=posts[i]%>"><%=posts[i]%></a> </td></tr>
+<% } %>
+</table> 
+<% if (data.sol > 1) { %>
+	<a href="/mars/<%=data.rover%>/<%=parseInt(data.sol)-1%>" class="btn btn-primary btn-sm">Previous Image Set</a>
+<% } %>
+<% if (data.sol < data.maxsol) { %>
+	<a href="/mars/<%=data.rover%>/<%=parseInt(data.sol)+1%>" class="btn btn-primary btn-sm">Next Image Set</a>
+	<a href="/mars/<%=data.rover%>/<%=parseInt(data.maxsol)%>" class="btn btn-primary btn-sm">Last Image Set</a>
+<% } %>
+</div>
+<% include footer %>

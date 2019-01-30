@@ -1,0 +1,14 @@
+{
+  "name": "express-guestbook",
+  "private": true,
+  "scripts": {
+    "start": "node app"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
+    "express": "^5.0.0-alpha.7",
+    "fs": "0.0.1-security",
+    "morgan": "^1.9.1"
+  }
+}

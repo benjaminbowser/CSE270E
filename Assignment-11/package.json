@@ -1,0 +1,13 @@
+{
+  "name": "random-number-api",
+  "private": true,
+  "scripts": {
+    "start": "node app"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^5.0.0-alpha.2",
+    "morgan": "^1.9.1",
+    "static": "^2.0.0"
+  }
+}
