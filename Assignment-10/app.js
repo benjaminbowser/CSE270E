@@ -10,7 +10,7 @@ var ForecastIo = require("forecastio");
 
 var app = express();
 // !!Private API key below!!
-var weather = new ForecastIo("4bf8130485c363f4908772ffbf20afe3");
+var weather = new ForecastIo("");
 
 app.use(express.static(path.resolve(__dirname, "public")));
 
