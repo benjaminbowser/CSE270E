@@ -1,8 +1,3 @@
-/*
- * Scott Campbell
- * Game data model
- * */
-
 var mongoose = require("mongoose");
 mongoose.connect("mongodb://localhost:27017/game");
 
@@ -87,6 +82,7 @@ function getGame(gameId) {
 
 }
 
+// Find games in progress
 function inProgress() {
 	return new Promise(function(resolv, reject) {
 		game.find({ $or: [ { state: "player1Turn" }, { state: "player2Turn" }]  },function(error,record) {
@@ -102,6 +98,7 @@ function inProgress() {
 	});
 }
 
+// Find orphaned games
 function getOrphaned() {
 	return new Promise(function(resolv, reject) {
 		game.find({state: "waiting" }, function(error, record) {
@@ -306,11 +303,12 @@ function getGames() {
 }
 
 
-
+// Clear out games
 async function clear() {
 	await game.collection.drop();
 }
 
+// Clear games older than a time (in epochs)
 function clearOld(time) {
 	return new Promise(function(resolv, reject) {
 		game.deleteMany( {"lastMoveTime": {$lt : time}}, function(error, record) {
@@ -332,6 +330,7 @@ function getIndex(name) {
 	return -1;
 }
 
+// Get stats on different users
 function getStats() {
 	players =  [];
 	return new Promise(function(resolv,reject) {
